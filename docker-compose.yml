@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  # frontend
+  frontend:
+    build: ./bole-client
+    container_name: bole-client
+    env_file:
+      - ./config/bole-client.env
+    restart: unless-stopped
+
+  # nginx reverse proxy
+  proxy:
+    image: nginx:1.19
+    volumes:
+      - "./config/nginx-proxy.conf:/etc/nginx/conf.d/default.conf"
+    links:
+      - frontend
+    depends_on:
+      - frontend
+    ports:
+      - "8080:80"
+    restart: unless-stopped
