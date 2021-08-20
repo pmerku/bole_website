@@ -1,0 +1,77 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Icon } from '../components/Icon';
+import { Button } from '../components/Button';
+import './WinesView.css';
+import { WinesData } from './WinesData';
+
+export function WinesView() {
+  return <SlideShow slides={WinesData} />;
+}
+
+function SlideShow(props: { slides: any }) {
+  const { t } = useTranslation('wines');
+  const [current, setCurrent] = React.useState(0);
+  const length = props.slides.length;
+
+  if (!Array.isArray(props.slides) || length <= 0) return null;
+
+  function prevSlide() {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  }
+
+  function nextSlide() {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  }
+
+  return (
+    <div>
+      {WinesData.map((slide, index) => {
+        return (
+          <div
+            key={index}
+            className={index === current ? 'slide active' : 'slide'}
+          >
+            {index === current && (
+              <div className="wines-wrapper">
+                <div className="bottles-wrapper">
+                  <div className="bottle-card">
+                    <Icon
+                      type="left_arrow"
+                      className="bottle-arrow"
+                      onClick={() => prevSlide()}
+                    />
+                    <div className="container">
+                      <img
+                        className="bottle-img"
+                        src={slide.image}
+                        alt="bottle-img"
+                      />
+                    </div>
+                    <Icon
+                      type="right_arrow"
+                      className="bottle-arrow"
+                      onClick={() => nextSlide()}
+                    />
+                  </div>
+                </div>
+                <div className="bottle-info">
+                  <h1>{t(slide.name + '.title')}</h1>
+                  <p>{t(slide.name + '.info')}</p>
+                  <p>{t(slide.name + '.description')}</p>
+                  <h3>{t(slide.name + '.price')}</h3>
+                  <Button
+                    className="bottle-button"
+                    onClick={() => (window.location.href = '/contacts')}
+                  >
+                    Order
+                  </Button>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}

@@ -1,0 +1,32 @@
+{
+  "brut": {
+    "title": "Brut Pro",
+    "info": "brut info",
+    "description": "brut description",
+    "price": "brut price"
+  },
+  "crnina": {
+    "title": "Črnina",
+    "info": "črnina info",
+    "description": "črnina description",
+    "price": "črnina price"
+  },
+  "glera": {
+    "title": "Glera",
+    "info": "glera info",
+    "description": "glera description",
+    "price": "glera price"
+  },
+  "malvazija": {
+    "title": "Malvazija",
+    "info": "malvazija info",
+    "description": "malvazija description",
+    "price": "malvazija price"
+  },
+  "vitovska": {
+    "title": "Vitovska",
+    "info": "vitovska info",
+    "description": "vitovska description",
+    "price": "vitovska price"
+  }
+}

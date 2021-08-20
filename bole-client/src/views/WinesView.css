@@ -1,0 +1,56 @@
+.slide {
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.wines-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wines-wrapper .bottle-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.wines-wrapper .bottle-card .bottle-arrow {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.wines-wrapper .container {
+  height: 70vh;
+  width: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.wines-wrapper .bottle-img {
+  width: auto;
+}
+
+.wines-wrapper .bottle-info {
+  position: relative;
+  padding: 5rem 2rem;
+  width: 20rem;
+  background-color: #707070;
+  border-radius: 5px;
+}
+
+.wines-wrapper .bottle-button {
+  position: absolute;
+  padding: 1rem 5rem;
+  bottom: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,25 @@
+.nav-bar-link {
+  position: relative;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  padding: 0.2rem 0.5rem;
+  color: #707070;
+}
+
+.nav-bar-link::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: #5a5a5a;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.nav-bar-link:hover::after {
+  transform: scaleX(1);
+}

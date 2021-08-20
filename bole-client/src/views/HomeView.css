@@ -1,0 +1,26 @@
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home-wrapper .home-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 2.5rem;
+}
+
+.home-wrapper .home-image img {
+  width: 100%;
+  max-height: 80vh;
+}
+
+.home-wrapper .home-button {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+}
