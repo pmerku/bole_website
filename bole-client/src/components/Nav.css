@@ -50,15 +50,15 @@
   width: 20rem;
 }
 
-.mobile-nav-wrapper .mobile-nav a {
+.mobile-nav-wrapper .mobile-nav .nav-bar-link {
   font-size: 1rem;
   color: white;
   margin: 0.2rem 2rem;
   padding: 2rem;
-  border-bottom: black 1px solid;
+  border-bottom: #5a5a5a 3px solid;
   text-align: center;
 }
 
-.mobile-nav-wrapper .mobile-nav a:last-child {
+.mobile-nav-wrapper .mobile-nav .nav-bar-link:last-child {
   border-bottom: none;
 }

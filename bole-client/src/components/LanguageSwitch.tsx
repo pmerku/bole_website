@@ -13,12 +13,16 @@ export function LanguageSwitch(props: { isMobile?: boolean }) {
   }
 
   return (
-    <div className={'language-switch ' + (open ? 'open' : '')}>
+    <div className="language-switch">
       <div className="cont" onClick={() => setOpen((p) => !p)}>
         <Icon type="globe" />
         <Icon type="triangle" />
       </div>
-      <div className={'menu ' + (props.isMobile ? 'mobile' : '')}>
+      <div
+        className={
+          'menu ' + (open ? 'open ' : '') + (props.isMobile ? 'mobile' : '')
+        }
+      >
         <div className="menuItem" onClick={() => changeLanguage('en')}>
           <Icon type="flag_en" className="flag" />
           EN

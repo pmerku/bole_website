@@ -9,21 +9,16 @@
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
-  position: relative;
   color: grey;
 }
 
 /* dropdown */
-.language-switch.open .menu,
-.language-switch.open {
+.language-switch .menu.open {
   display: flex;
-}
-
-.language-switch.open .menu {
   animation: slide-in-menu 150ms ease-in-out;
 }
 
-.language-switch.open .cont {
+.language-switch .cont.open {
   z-index: 98;
 }
 
