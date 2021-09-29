@@ -18,7 +18,11 @@ export const Map = React.memo(function Map(props: {
   isMarkerShown?: boolean;
 }) {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: window._env_.BOLE_GOOGLE_API_KEY,
+    googleMapsApiKey:
+      window._env_.BOLE_GOOGLE_API_KEY === undefined ||
+      window._env_.BOLE_GOOGLE_API_KEY === null
+        ? process.env.BOLE_GOOGLE_API_KEY
+        : window._env_.BOLE_GOOGLE_API_KEY,
     libraries: ['places'],
   });
 
