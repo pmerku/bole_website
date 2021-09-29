@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './LanguageSwitch.css';
 import { Icon } from './Icon';
 
-export function LanguageSwitch() {
+export function LanguageSwitch(props: { isMobile?: boolean }) {
   const [open, setOpen] = React.useState(false);
   const { i18n } = useTranslation();
 
@@ -18,8 +18,7 @@ export function LanguageSwitch() {
         <Icon type="globe" />
         <Icon type="triangle" />
       </div>
-      <div onClick={() => setOpen(false)} />
-      <div className="menu">
+      <div className={'menu ' + (props.isMobile ? 'mobile' : '')}>
         <div className="menuItem" onClick={() => changeLanguage('en')}>
           <Icon type="flag_en" className="flag" />
           EN

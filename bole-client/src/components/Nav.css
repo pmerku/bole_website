@@ -1,0 +1,64 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  height: 10vh;
+}
+
+.nav-wrapper .logo {
+  font-size: 3rem;
+}
+
+.nav-wrapper .nav {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  height: 10vh;
+}
+
+.mobile-nav-wrapper .logo {
+  position: relative;
+  font-size: 2rem;
+  color: gray;
+}
+
+.mobile-nav-wrapper .logo.open {
+  z-index: 98;
+}
+
+.mobile-nav-wrapper .mobile-nav.open {
+  display: flex;
+  animation: slide-in-menu 150ms ease-in-out;
+}
+
+.mobile-nav-wrapper .mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: darkgray;
+  border-radius: 5px;
+  position: absolute;
+  top: 2.5rem;
+  right: -2rem;
+  z-index: 99;
+  width: 20rem;
+}
+
+.mobile-nav-wrapper .mobile-nav a {
+  font-size: 1rem;
+  color: white;
+  margin: 0.2rem 2rem;
+  padding: 2rem;
+  border-bottom: black 1px solid;
+  text-align: center;
+}
+
+.mobile-nav-wrapper .mobile-nav a:last-child {
+  border-bottom: none;
+}

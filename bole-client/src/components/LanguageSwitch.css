@@ -13,10 +13,6 @@
   color: grey;
 }
 
-.language-switch .cont:hover {
-  background-color: darkgrey;
-}
-
 /* dropdown */
 .language-switch.open .menu,
 .language-switch.open {
@@ -41,7 +37,11 @@
   right: 0;
   z-index: 99;
   padding: 0.5rem 0;
-  width: 5rem;
+  width: 8rem;
+}
+
+.language-switch .menu.mobile {
+  left: -1rem;
 }
 
 .language-switch .menu .menuItem {
@@ -57,6 +57,7 @@
 
 .language-switch .menu .flag {
   margin-right: 0.5rem;
+  margin-left: 1.5rem;
 }
 
 .language-switch .menu .menuItem:hover {
