@@ -9,7 +9,12 @@ import { ContactsView } from '../views/ContactsView';
 import { HomeView } from '../views/HomeView';
 import { LoadingView } from '../views/LoadingView';
 
-function NavBarRouter() {
+function NavBarRouter(props: { isMobile: boolean }) {
+  return props.isMobile ? <MobileNav /> : <Nav />;
+}
+
+// TODO consistent nav and page height (ask jelle)
+export function RootNavigation() {
   const [windowDimension, setWindowDimension] = React.useState<any>(null);
 
   React.useEffect(() => {
@@ -27,18 +32,13 @@ function NavBarRouter() {
 
   const isMobile = windowDimension <= 700;
 
-  return isMobile ? <MobileNav /> : <Nav />;
-}
-
-// TODO consistent nav and page height (ask jelle)
-export function RootNavigation() {
   return (
     <div className="wrapper">
-      <NavBarRouter />
+      <NavBarRouter isMobile={isMobile} />
       <div className="page-content">
         <Switch>
           <Route exact path="/">
-            <HomeView />
+            <HomeView isMobile={isMobile} />
           </Route>
           <Route exact path="/about">
             <AboutView />

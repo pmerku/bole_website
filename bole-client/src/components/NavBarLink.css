@@ -23,3 +23,15 @@
 .nav-bar-link:hover::after {
   transform: scaleX(1);
 }
+
+.nav-bar-link.active::after {
+  transform: scalex(1);
+}
+
+.nav-bar-link.active.mobile::after {
+  transform: scalex(0);
+}
+
+.nav-bar-link.mobile:hover::after {
+  transform: scalex(0);
+}

@@ -14,13 +14,22 @@
   margin: 0 2.5rem;
 }
 
+.home-wrapper .home-image.mobile {
+  margin: 0;
+  border-radius: 0;
+}
+
+.home-wrapper .home-image.mobile img {
+  max-height: 90vh;
+}
+
 .home-wrapper .home-image img {
-  width: 100%;
-  max-height: 80vh;
+  max-height: 85vh;
 }
 
 .home-wrapper .home-button {
   position: absolute;
   bottom: 5rem;
   left: 50%;
+  transform: translateX(-50%);
 }

@@ -9,16 +9,23 @@ export function MobileNav() {
 
   return (
     <div className="mobile-nav-wrapper">
-      <LanguageSwitch isMobile />
-      <div className="logo" onClick={() => setOpen((p) => !p)}>
-        <Icon type="bars" />
-        <nav className={'mobile-nav ' + (open ? 'open' : '')}>
-          <NavBarLink link="/">Home</NavBarLink>
-          <NavBarLink link="/about">About Us</NavBarLink>
-          <NavBarLink link="/wines">Wines</NavBarLink>
-          <NavBarLink link="/story">Our Story</NavBarLink>
-          <NavBarLink link="/contacts">Contacts</NavBarLink>
-        </nav>
+      <div className="logo">
+        <Icon type="logo" />
+      </div>
+      <div className="mobile-nav-menu">
+        <LanguageSwitch isMobile />
+        <div className="logo" onClick={() => setOpen((p) => !p)}>
+          <Icon type="bars" />
+          <nav className={'mobile-nav ' + (open ? 'open' : '')}>
+            <NavBarLink link="/">Home</NavBarLink>
+            <NavBarLink link="/about">About Us</NavBarLink>
+            <NavBarLink link="/wines">Wines</NavBarLink>
+            <NavBarLink link="/story">Our Story</NavBarLink>
+            <NavBarLink link="/contacts" isMobile>
+              Contacts
+            </NavBarLink>
+          </nav>
+        </div>
       </div>
     </div>
   );

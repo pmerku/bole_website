@@ -31,28 +31,32 @@
   top: 2.5rem;
   right: 0;
   z-index: 99;
-  padding: 0.5rem 0;
-  width: 8rem;
+  width: 15rem;
 }
 
 .language-switch .menu.mobile {
-  left: -1rem;
+  right: -2rem;
 }
 
 .language-switch .menu .menuItem {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 1.5rem;
   color: white;
   text-decoration: none;
   cursor: pointer;
-  margin: 0;
+  margin: 0.2rem 2rem;
+  font-size: 1rem;
+  border-bottom: #5a5a5a 3px solid;
+}
+
+.language-switch .menu .menuItem:last-child {
+  border-bottom: none;
 }
 
 .language-switch .menu .flag {
   margin-right: 0.5rem;
-  margin-left: 1.5rem;
 }
 
 .language-switch .menu .menuItem:hover {
