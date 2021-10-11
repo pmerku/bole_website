@@ -4,10 +4,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
 import configuration from '~/config/configuration';
 import { TypeORMSession } from '@/session.entity';
-import { MailerModule } from '@nestjs-modules/mailer';
-import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 
 import { MailModule } from '$/mail/mail.module';
+import { MailerModule } from '@nestjs-modules/mailer';
+import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 
 const config = ConfigModule.forRoot({
   load: [configuration],
@@ -47,7 +47,7 @@ const config = ConfigModule.forRoot({
           },
         },
         defaults: {
-          from: '"No Reply" <noreply@example.com>', // outgoing email ID
+          from: '"No Reply" <noreply@nestjs.com>', // outgoing email ID
         },
         template: {
           dir: process.cwd() + '/template/',
