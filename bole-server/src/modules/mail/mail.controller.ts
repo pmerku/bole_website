@@ -1,12 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { MailService } from './mail.service';
+import { MailDto } from '@/mail.dto';
 
-@Controller('contact')
+@Controller('mail')
 export class MailController {
   constructor(private readonly mailService: MailService) {}
 
-  @Get('template')
-  sendTemplate(): any {
-    return this.mailService.example();
+  @Post('/')
+  sendMail(@Body() mailBody: MailDto): Promise<void> {
+    return this.mailService.generateMail(mailBody);
   }
 }

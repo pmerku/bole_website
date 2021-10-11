@@ -1,20 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { MailerService } from '@nestjs-modules/mailer';
+import { MailDto } from '@/mail.dto';
 
 @Injectable()
 export class MailService {
   constructor(private readonly mailerService: MailerService) {}
 
-  async example(): Promise<void> {
+  async generateMail(mailBody: MailDto): Promise<void> {
+    console.log(mailBody);
     await this.mailerService.sendMail({
-      to: 'user@gmail.com', // List of receivers email address
-      from: 'user@outlook.com', // Senders email address
-      subject: 'Testing Nest Mailermodule with template ✔',
-      template: 'index', // The `.hbs` extension is appended automatically.
+      to: 'pmerku@gmail.com', // List of receivers email address
+      from: mailBody.email, // Senders email address
+      subject: mailBody.subject,
+      template: './index', // The `.hbs` extension is appended automatically.
       context: {
         // Data to be sent to template engine.
-        code: 'cf1a3f828287',
-        username: 'john doe',
+        name: mailBody.name,
+        email: mailBody.email,
+        subject: mailBody.subject,
+        message: mailBody.message,
       },
     });
   }
