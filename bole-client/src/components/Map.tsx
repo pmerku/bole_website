@@ -19,7 +19,6 @@ export const Map = React.memo(function Map(props: {
 }) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_BOLE_GOOGLE_API_KEY as string,
-    libraries: ['places'],
   });
 
   function showMarker() {

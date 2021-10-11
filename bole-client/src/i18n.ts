@@ -22,7 +22,7 @@ i18n
   )
   .init({
     fallbackLng: 'en',
-    debug: true,
+    debug: false,
     detection: { order: ['queryString', 'cookie'] },
     cache: ['cookie'],
     interpolation: { escapeValue: false },
