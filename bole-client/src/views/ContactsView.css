@@ -1,0 +1,43 @@
+.contacts-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts-wrapper.mobile {
+  flex-direction: column;
+  align-items: normal;
+}
+
+.contacts-wrapper .map-container {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+.contacts-wrapper .title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 20px 20px 20px 10px;
+  text-align: center;
+}
+
+.contacts-wrapper .form-container {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+.contacts-wrapper .form-button {
+  margin: 2rem 2rem 2rem 0;
+  width: 10rem;
+  background-color: #7f86a3;
+}
+
+.contacts-wrapper .form-button:hover {
+  background-color: #3498db;
+}
+
+.footer {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
+}

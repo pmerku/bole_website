@@ -3,8 +3,8 @@ import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
 import './Map.css';
 
 const ContainerStyle = {
-  width: '800px',
-  height: '600px',
+  width: 'auto',
+  height: '500px',
 };
 
 const options = {
@@ -31,7 +31,6 @@ export const Map = React.memo(function Map(props: {
 
   return (
     <div className="map-wrapper">
-      <h2 className="map-title">Come visit us at here</h2>
       <div className="map">
         <GoogleMap
           mapContainerStyle={ContainerStyle}

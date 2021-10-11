@@ -50,7 +50,7 @@ export function RootNavigation() {
             <StoryView />
           </Route>
           <Route exact path="/contacts">
-            <ContactsView />
+            <ContactsView isMobile={isMobile} />
           </Route>
           <Route path="*">
             <LoadingView>Not Found</LoadingView>
