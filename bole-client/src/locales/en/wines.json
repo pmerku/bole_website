@@ -1,4 +1,10 @@
 {
+  "prosekar": {
+    "title": "Prosekar",
+    "info": "prosekar info",
+    "description": "prosekar description",
+    "price": "prosekar price"
+  },
   "brut": {
     "title": "Brut Pro",
     "info": "brut info",

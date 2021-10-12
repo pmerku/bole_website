@@ -7,6 +7,10 @@ import vitovska from '../assets/bottles/Vitovska.jpg';
 export const WinesData = [
   {
     image: brut,
+    name: 'prosekar',
+  },
+  {
+    image: brut,
     name: 'brut',
   },
   {
