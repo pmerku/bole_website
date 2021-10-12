@@ -44,7 +44,7 @@ export function RootNavigation() {
             <AboutView />
           </Route>
           <Route exact path="/wines">
-            <WinesView />
+            <WinesView isMobile={isMobile} />
           </Route>
           <Route exact path="/story">
             <StoryView />
@@ -57,6 +57,7 @@ export function RootNavigation() {
           </Route>
         </Switch>
       </div>
+      <div className="footer">This is a footer</div>
     </div>
   );
 }
