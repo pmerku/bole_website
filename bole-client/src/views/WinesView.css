@@ -14,12 +14,21 @@
   justify-content: center;
 }
 
+.wines-wrapper.mobile {
+  flex-direction: column;
+  padding-bottom: 8rem;
+}
+
 .wines-wrapper .bottle-card {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 5rem 2rem 2rem;
+}
+
+.wines-wrapper .bottle-card.mobile {
+  padding: 1rem 2rem;
 }
 
 .wines-wrapper .bottle-card .bottle-arrow {
@@ -28,8 +37,8 @@
 }
 
 .wines-wrapper .container {
-  height: 70vh;
-  width: 400px;
+  height: 60vh;
+  width: 15rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -47,10 +56,20 @@
   border-radius: 5px;
 }
 
+.wines-wrapper .bottle-info.mobile {
+  padding: 2rem;
+  width: 15rem;
+}
+
 .wines-wrapper .bottle-button {
   position: absolute;
   padding: 1rem 5rem;
   bottom: -5rem;
   left: 50%;
   transform: translateX(-50%);
+  background-color: #7f86a3;
+}
+
+.wines-wrapper .bottle-button:hover {
+  background-color: #3498db;
 }

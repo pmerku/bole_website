@@ -5,11 +5,11 @@ import { Button } from '../components/Button';
 import './WinesView.css';
 import { WinesData } from './WinesData';
 
-export function WinesView() {
-  return <SlideShow slides={WinesData} />;
+export function WinesView(props: { isMobile: boolean }) {
+  return <SlideShow slides={WinesData} isMobile={props.isMobile} />;
 }
 
-function SlideShow(props: { slides: any }) {
+function SlideShow(props: { slides: any; isMobile: boolean }) {
   const { t } = useTranslation('wines');
   const [current, setCurrent] = React.useState(0);
   const length = props.slides.length;
@@ -33,9 +33,15 @@ function SlideShow(props: { slides: any }) {
             className={index === current ? 'slide active' : 'slide'}
           >
             {index === current && (
-              <div className="wines-wrapper">
+              <div
+                className={'wines-wrapper ' + (props.isMobile ? 'mobile' : '')}
+              >
                 <div className="bottles-wrapper">
-                  <div className="bottle-card">
+                  <div
+                    className={
+                      'bottle-card ' + (props.isMobile ? 'mobile' : '')
+                    }
+                  >
                     <Icon
                       type="left_arrow"
                       className="bottle-arrow"
@@ -55,7 +61,9 @@ function SlideShow(props: { slides: any }) {
                     />
                   </div>
                 </div>
-                <div className="bottle-info">
+                <div
+                  className={'bottle-info ' + (props.isMobile ? 'mobile' : '')}
+                >
                   <h1>{t(slide.name + '.title')}</h1>
                   <p>{t(slide.name + '.info')}</p>
                   <p>{t(slide.name + '.description')}</p>
