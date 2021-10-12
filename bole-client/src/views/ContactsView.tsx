@@ -33,57 +33,54 @@ export function ContactsView(props: { isMobile: boolean }) {
   }, [sendMailFetch.done]);
 
   return (
-    <div>
-      <div className={'contacts-wrapper ' + (props.isMobile ? 'mobile' : '')}>
-        <div className="map-container">
-          <h2 className="title">Come visit us here</h2>
-          <Map location={location} zoom={15} isMarkerShown />
-        </div>
-        <div className="form-container">
-          <h2 className="title">Contact us</h2>
-          <TextInput
-            value={name}
-            set={setName}
-            placeholder="John Doe"
-            label="Name"
-          />
-          <TextInput
-            value={email}
-            set={setEmail}
-            placeholder="email@example.com"
-            label="Email"
-          />
-          <TextInput
-            value={subject}
-            set={setSubject}
-            placeholder="Example subject"
-            label="Subject"
-          />
-          <TextInput
-            value={message}
-            set={setMessage}
-            placeholder="Example message"
-            label="Message"
-          />
-          <Button
-            className="form-button"
-            onClick={() =>
-              sendMailFetch.run({
-                name,
-                email,
-                subject,
-                message,
-              })
-            }
-          >
-            Send
-          </Button>
-          {sendMailFetch.error ? (
-            <p>Something went wrong, try again later...</p>
-          ) : null}
-        </div>
+    <div className={'contacts-wrapper ' + (props.isMobile ? 'mobile' : '')}>
+      <div className="form-container">
+        <h2 className="title">Contact us</h2>
+        <TextInput
+          value={name}
+          set={setName}
+          placeholder="John Doe"
+          label="Name"
+        />
+        <TextInput
+          value={email}
+          set={setEmail}
+          placeholder="email@example.com"
+          label="Email"
+        />
+        <TextInput
+          value={subject}
+          set={setSubject}
+          placeholder="Example subject"
+          label="Subject"
+        />
+        <TextInput
+          value={message}
+          set={setMessage}
+          placeholder="Example message"
+          label="Message"
+        />
+        <Button
+          className={'form-button ' + (props.isMobile ? 'mobile' : '')}
+          onClick={() =>
+            sendMailFetch.run({
+              name,
+              email,
+              subject,
+              message,
+            })
+          }
+        >
+          Send
+        </Button>
+        {sendMailFetch.error ? (
+          <p>Something went wrong, try again later...</p>
+        ) : null}
       </div>
-      <div className="footer">Something else here</div>
+      <div className="map-container">
+        <h2 className="title">Come visit us here</h2>
+        <Map location={location} zoom={15} isMarkerShown />
+      </div>
     </div>
   );
 }

@@ -11,7 +11,7 @@
 
 .contacts-wrapper .map-container {
   flex: 1;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
 
 .contacts-wrapper .title {
@@ -23,7 +23,7 @@
 
 .contacts-wrapper .form-container {
   flex: 1;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
 
 .contacts-wrapper .form-button {
@@ -32,12 +32,10 @@
   background-color: #7f86a3;
 }
 
-.contacts-wrapper .form-button:hover {
-  background-color: #3498db;
+.contacts-wrapper .form-button.mobile {
+  margin: 2rem 2rem 2rem 4rem;
 }
 
-.footer {
-  text-align: center;
-  font-size: 2rem;
-  padding: 2rem;
+.contacts-wrapper .form-button:hover {
+  background-color: #3498db;
 }
