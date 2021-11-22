@@ -7,9 +7,8 @@ export class MailService {
   constructor(private readonly mailerService: MailerService) {}
 
   async generateMail(mailBody: MailDto): Promise<void> {
-    console.log(mailBody);
     await this.mailerService.sendMail({
-      to: 'pmerku@gmail.com', // List of receivers email address
+      to: process.env.RECEIVER_EMAIL, // List of receivers email address
       from: mailBody.email, // Senders email address
       subject: mailBody.subject,
       template: './index', // The `.hbs` extension is appended automatically.

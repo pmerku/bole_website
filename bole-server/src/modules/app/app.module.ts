@@ -38,16 +38,21 @@ const config = ConfigModule.forRoot({
       imports: [config],
       useFactory: async (configService: ConfigService) => ({
         transport: {
-          host: configService.get('mail.host'),
-          port: configService.get('mail.port'),
-          secure: false, // true for 465, false for other ports
+          host: 'smtp.gmail.com',
+          port: 465,
+          service: 'gmail',
+          secure: true, // true for 465, false for other ports
           auth: {
-            user: configService.get('mail.id'), // generated ethereal user
-            pass: configService.get('mail.password'), // generated ethereal password
+            type: 'OAuth2',
+            user: configService.get('mail.user'),
+            clientId: configService.get('mail.client_id'),
+            clientSecret: configService.get('mail.client_secret'),
+            refreshToken: configService.get('mail.refresh_token'),
+            accessToken: configService.get('mail.access_token'),
           },
         },
         defaults: {
-          from: '"No Reply" <noreply@nestjs.com>', // outgoing email ID
+          from: `"No Reply" <${configService.get('mail.user')}>`, // outgoing email ID
         },
         template: {
           dir: process.cwd() + '/template/',

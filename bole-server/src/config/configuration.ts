@@ -3,10 +3,13 @@ export default () => {
   const required = [
     'POSTGRES_PASSWORD',
     'SESSION_SECRET',
-    'EMAIL_HOST',
-    'EMAIL_PORT',
-    'EMAIL_ID',
-    'EMAIL_PASS',
+    'EMAIL_USER',
+    'EMAIL_CLIENT_ID',
+    'EMAIL_CLIENT_SECRET',
+    'EMAIL_REDIRECT_URL',
+    'EMAIL_REFRESH_TOKEN',
+    'EMAIL_ACCESS_TOKEN',
+    'RECEIVER_EMAIL',
   ];
   required.forEach((v) => {
     if (!process.env[v]) {
@@ -19,7 +22,7 @@ export default () => {
   return {
     port,
     cookie: {
-      name: process.env.COOKIE_NAME || 'vivid.login',
+      name: process.env.COOKIE_NAME || 'bole.session',
     },
     useHttps: process.env.USE_HTTPS === 'true',
     saltRounds: parseInt(process.env.SALT_ROUNDS) || 10,
@@ -28,17 +31,19 @@ export default () => {
       port: parseInt(<string>process.env.POSTGRES_PORT) || 5432,
       user: process.env.POSTGRES_USER || 'postgres',
       password: process.env.POSTGRES_PASSWORD,
-      database: process.env.POSTGRES_DATABASE || 'vivid',
+      database: process.env.POSTGRES_DATABASE || 'bole',
     },
     secrets: {
       session: process.env.SESSION_SECRET,
-      user: process.env.USER_ENCRYPTION_SECRET,
+      key: process.env.ENCRYPTION_SECRET,
     },
     mail: {
-      host: process.env.EMAIL_HOST,
-      port: parseInt(<string>process.env.EMAIL_PORT),
-      id: process.env.EMAIL_ID,
-      password: process.env.EMAIL_PASS,
+      user: process.env.EMAIL_USER,
+      client_id: process.env.EMAIL_CLIENT_ID,
+      client_secret: process.env.EMAIL_CLIENT_SECRET,
+      redirect_url: process.env.EMAIL_REDIRECT_URL,
+      refresh_token: process.env.EMAIL_REFRESH_TOKEN,
+      access_token: process.env.EMAIL_ACCESS_TOKEN,
     },
   };
 };
