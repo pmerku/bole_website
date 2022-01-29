@@ -1,0 +1,29 @@
+.styled-text-area label .text {
+  color: black;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  padding: 1rem 1.5rem;
+}
+
+.styled-text-area textarea {
+  border-radius: 3px;
+  background-color: #252a40;
+  border: none;
+  display: block;
+  width: 100%;
+  color: white;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;
+}
+
+.styled-text-area textarea:focus,
+.styled-text-area textarea:hover {
+  background-color: #2f344d;
+}
+
+.styled-text-area textarea::placeholder {
+  color: #7f86a3;
+}
