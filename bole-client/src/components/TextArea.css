@@ -16,7 +16,7 @@
   padding: 1rem 1.5rem;
   box-sizing: border-box;
   outline: none;
-  resize: vertical;
+  resize: none;
 }
 
 .styled-text-area textarea:focus,

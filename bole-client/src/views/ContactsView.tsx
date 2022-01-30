@@ -42,7 +42,7 @@ export function ContactsView(props: { isMobile: boolean }) {
         <div className="info-card">
           <p className={infoText}>email</p>
           <p className={infoText}>phone</p>
-          <p className={infoText}>address</p>
+          <p className={infoText}>{location.address}</p>
         </div>
         <div className="form-container">
           <TextInput
