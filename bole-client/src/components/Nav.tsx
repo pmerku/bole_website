@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Nav.css';
 import { Icon } from './Icon';
 import { NavBarLink } from './NavBarLink';
 import { LanguageSwitch } from './LanguageSwitch';
+import { useOutsideClick } from '../hooks/useOutsideClick';
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
+
+  const wrapperRef = useRef(null);
+  const outsideClick = useOutsideClick(wrapperRef);
+
+  React.useEffect(() => {
+    if (open) {
+      setOpen(!outsideClick.isOutside);
+    }
+  }, [outsideClick.isOutside]);
 
   return (
     <div className="mobile-nav-wrapper">
@@ -14,7 +24,11 @@ export function MobileNav() {
       </div>
       <div className="mobile-nav-menu">
         <LanguageSwitch isMobile />
-        <div className="logo" onClick={() => setOpen((p) => !p)}>
+        <div
+          className="logo"
+          ref={wrapperRef}
+          onClick={() => setOpen((p) => !p)}
+        >
           <Icon type="bars" />
           <nav className={'mobile-nav ' + (open ? 'open' : '')}>
             <NavBarLink link="/">Home</NavBarLink>

@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import './LanguageSwitch.css';
 import { Icon } from './Icon';
+import { useOutsideClick } from '../hooks/useOutsideClick';
 
 export function LanguageSwitch(props: { isMobile?: boolean }) {
   const [open, setOpen] = React.useState(false);
   const { i18n } = useTranslation();
+
+  const wrapperRef = useRef(null);
+  const outsideClick = useOutsideClick(wrapperRef);
+
+  React.useEffect(() => {
+    if (open) {
+      setOpen(!outsideClick.isOutside);
+    }
+  }, [outsideClick.isOutside]);
 
   function changeLanguage(language: string) {
     setOpen(false);
@@ -14,7 +24,7 @@ export function LanguageSwitch(props: { isMobile?: boolean }) {
 
   return (
     <div className="language-switch">
-      <div className="cont" onClick={() => setOpen((p) => !p)}>
+      <div className="cont" ref={wrapperRef} onClick={() => setOpen((p) => !p)}>
         <Icon type="globe" />
         <Icon type="triangle" />
       </div>
