@@ -20,7 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3rem;
+  padding: 0 1.5rem;
   height: 10vh;
 }
 
@@ -41,35 +41,36 @@
 }
 
 .mobile-nav-wrapper .mobile-nav.open {
-  display: flex;
+  width: 20rem;
   animation: slide-in-menu 150ms ease-in-out;
 }
 
 .mobile-nav-wrapper .mobile-nav {
-  display: none;
-  flex-direction: column;
-  background-color: darkgray;
-  border-radius: 5px;
-  position: absolute;
-  top: 2.5rem;
-  right: -2rem;
-  z-index: 99;
-  width: 20rem;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 5rem;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 2rem;
 }
 
 .mobile-nav-wrapper .mobile-nav .nav-bar-link {
-  font-size: 1rem;
-  color: white;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+  color: #5a5a5a;
+  text-decoration: none;
   margin: 0.2rem 2rem;
-  padding: 2rem;
-  border-bottom: #5a5a5a 3px solid;
-  text-align: center;
+  font-size: 1.5rem;
+  width: 15rem;
 }
 
 .mobile-nav-wrapper .mobile-nav .nav-bar-link.active {
-  color: darkslateblue;
-}
-
-.mobile-nav-wrapper .mobile-nav .nav-bar-link:last-child {
-  border-bottom: none;
+  background-color: #7f86a3;
+  border-radius: 5px;
+  color: white;
 }

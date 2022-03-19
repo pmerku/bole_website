@@ -31,10 +31,18 @@ export function MobileNav() {
         >
           <Icon type="bars" />
           <nav className={'mobile-nav ' + (open ? 'open' : '')}>
-            <NavBarLink link="/">Home</NavBarLink>
-            <NavBarLink link="/about">About Us</NavBarLink>
-            <NavBarLink link="/wines">Wines</NavBarLink>
-            <NavBarLink link="/story">Our Story</NavBarLink>
+            <NavBarLink link="/" isMobile>
+              Home
+            </NavBarLink>
+            <NavBarLink link="/about" isMobile>
+              About Us
+            </NavBarLink>
+            <NavBarLink link="/wines" isMobile>
+              Wines
+            </NavBarLink>
+            <NavBarLink link="/story" isMobile>
+              Our Story
+            </NavBarLink>
             <NavBarLink link="/contacts" isMobile>
               Contacts
             </NavBarLink>
