@@ -61,7 +61,7 @@
   color: white;
 }
 
-.mobile-nav-wrapper .menu .menuItem.active {
+.language-switch .menu .menuItem.active {
   background-color: #7f86a3;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
