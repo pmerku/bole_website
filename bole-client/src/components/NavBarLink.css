@@ -4,7 +4,7 @@
   font-size: 1.2rem;
   margin: 0 0.5rem;
   padding: 0.5rem;
-  color: #707070;
+  color: #252A40;
   width: 6rem;
   text-align: center;
 }
@@ -16,7 +16,7 @@
   height: 3px;
   bottom: 100%;
   left: 0;
-  background: #5a5a5a;
+  background: #252A40;
   transition: transform 0.5s;
   transform: scaleX(0);
   transform-origin: center;

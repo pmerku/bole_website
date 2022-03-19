@@ -1,8 +1,9 @@
 .contacts-wrapper .title {
   text-transform: uppercase;
-  font-size: 2rem;
   padding: 20px 20px 20px 10px;
   text-align: center;
+  color: rgba(37, 42, 64, 1);
+  font: bold 2.5rem "Segoe UI";
 }
 
 .contacts-wrapper .info-container {

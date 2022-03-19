@@ -4,7 +4,6 @@ import img from '../assets/home/DJI_0258.jpg';
 import './HomeView.css';
 import { Button } from '../components/Button';
 
-// TODO consistent nav and page height (ask jelle)
 export function HomeView(props: { isMobile: boolean }) {
   const { t } = useTranslation('home');
 

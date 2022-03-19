@@ -8,7 +8,7 @@
 
 .nav-wrapper .logo {
   font-size: 3rem;
-  color: gray;
+  color: #252A40;
 }
 
 .nav-wrapper .nav {
@@ -33,7 +33,7 @@
 .mobile-nav-wrapper .logo {
   position: relative;
   font-size: 2rem;
-  color: gray;
+  color: #252A40;
 }
 
 .mobile-nav-wrapper .logo.open {
@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   padding: 1.5rem 1.5rem 1.5rem 3rem;
-  color: #5a5a5a;
+  color: #252A40;
   text-decoration: none;
   margin: 0.2rem 2rem;
   font-size: 1.5rem;
