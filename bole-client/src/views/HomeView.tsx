@@ -13,9 +13,12 @@ export function HomeView(props: { isMobile: boolean }) {
       <div className={'home-image ' + (props.isMobile ? 'mobile' : '')}>
         <img src={img} alt="home-image" />
       </div>
+      <div className="home-banner">
+        <text className="banner-text">BOLE</text>
+      </div>
       <Button
         onClick={() => (window.location.href = '/wines')}
-        className="home-button"
+        className={'home-button ' + (props.isMobile ? 'mobile' : '')}
       >
         {t('button')}
       </Button>

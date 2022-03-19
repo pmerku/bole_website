@@ -9,27 +9,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
   overflow: hidden;
-  margin: 0 2.5rem;
-}
-
-.home-wrapper .home-image.mobile {
-  margin: 0;
-  border-radius: 0;
+  width: 100%;
 }
 
 .home-wrapper .home-image.mobile img {
   max-height: 90vh;
+  width: auto;
 }
 
 .home-wrapper .home-image img {
-  max-height: 85vh;
+  max-height: 90vh;
+  width: 100%;
+}
+
+.home-wrapper .banner-text {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translateX(50%);
+  font: normal 20rem "Segoe UI";
+  color: #e3dcdc;
+  text-shadow: -10px 10px rgba(37, 42, 64, 1), 10px 10px rgba(37, 42, 64, 0.2), 10px 10px rgba(37, 42, 64, 0.2), 10px -10px rgba(37, 42, 64, 1);
 }
 
 .home-wrapper .home-button {
   position: absolute;
-  bottom: 5rem;
+  bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 1.5rem;
+  padding: 1rem;
+  width: 15rem;
+  border-radius: 30px;
+  box-shadow: 0 0 50px 5px #252a40;
+  margin: 2rem;
+  background-color: #cccfe0;
+  color: #252a40;
+}
+
+.home-wrapper .home-button:hover {
+  background-color: #8f9cc7;
+}
+
+.home-wrapper .home-button.mobile {
+  bottom: 8rem;
 }
