@@ -1,13 +1,12 @@
 .contacts-wrapper .title {
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 2rem;
   padding: 20px 20px 20px 10px;
   text-align: center;
 }
 
 .contacts-wrapper .info-container {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -17,14 +16,35 @@
 }
 
 .contacts-wrapper .info-card {
-  width: 40%;
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  align-items: center;
+}
+
+.contacts-wrapper .info-card.expanded {
+  margin-left: 2rem;
+  background-color: #cccfe0;
+  color: #252a40;
+  border-radius: 20px;
+  justify-content: center;
 }
 
 .contacts-wrapper .info-text {
-  padding-left: 8rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.contacts-wrapper .info-content-expanded {
+  padding: 4rem 5.5rem 4rem 2.5rem;
+}
+
+.contacts-wrapper .info-content-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contacts-wrapper .form-container {
@@ -49,11 +69,13 @@
 }
 
 .contacts-wrapper .form-button:hover {
-  background-color: #3498db;
+  background-color: #8f9cc7;
 }
 
 .contacts-wrapper .info-text.mobile {
-  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 .contacts-wrapper .map-container {

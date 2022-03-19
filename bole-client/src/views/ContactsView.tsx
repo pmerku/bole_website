@@ -5,9 +5,10 @@ import { TextInput } from '../components/TextInput';
 import { TextArea } from '../components/TextArea';
 import { Button } from '../components/Button';
 import { useFetch } from '../hooks/useFetch';
+import { Icon } from '../components/Icon';
 
 const location = {
-  address: 'Via Sottomonte, 25, 34135 Trieste TS',
+  address: ' Via Sottomonte, 25, 34135 Trieste TS',
   lat: 45.67296,
   lng: 13.77905,
 };
@@ -37,12 +38,38 @@ export function ContactsView(props: { isMobile: boolean }) {
 
   return (
     <div className="contacts-wrapper">
-      <h2 className="title">Contact us</h2>
+      <h2
+        className="title"
+        style={{ marginBottom: props.isMobile ? '0' : '3rem' }}
+      >
+        Contact us
+      </h2>
       <div className={'info-container ' + (props.isMobile ? 'mobile' : '')}>
-        <div className="info-card">
-          <p className={infoText}>email</p>
-          <p className={infoText}>phone</p>
-          <p className={infoText}>{location.address}</p>
+        <div className={'info-card ' + (props.isMobile ? '' : 'expanded')}>
+          <div
+            className={
+              props.isMobile ? 'info-content-centered' : 'info-content-expanded'
+            }
+          >
+            <h3 className={infoText} style={{ fontSize: '1.8rem' }}>
+              Contact information
+            </h3>
+            <p className={infoText} style={{ marginBottom: '2rem' }}>
+              Fill up the form and we will get back to you!
+            </p>
+            <p className={infoText}>
+              <Icon type="email" spacingRight />
+              example@email.com
+            </p>
+            <p className={infoText}>
+              <Icon type="phone" spacingRight />
+              +39 040 000 000
+            </p>
+            <p className={infoText}>
+              <Icon type="location" spacingRight />
+              {location.address}
+            </p>
+          </div>
         </div>
         <div className="form-container">
           <TextInput
@@ -90,7 +117,7 @@ export function ContactsView(props: { isMobile: boolean }) {
         </div>
       </div>
       <div className="map-container">
-        <h2 className="title">Come visit us here</h2>
+        <h2 className="title">Come visit us</h2>
         <Map location={location} zoom={15} isMarkerShown />
       </div>
     </div>

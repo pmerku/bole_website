@@ -5,16 +5,16 @@
 .language-switch .cont {
   display: flex;
   align-items: center;
-  padding: 0.5rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
   color: grey;
+  width: 3rem;
 }
 
-/* dropdown */
+/* sidenav */
 .language-switch .menu.open {
-  display: flex;
+  width: 20rem;
   animation: slide-in-menu 150ms ease-in-out;
 }
 
@@ -23,15 +23,16 @@
 }
 
 .language-switch .menu {
-  display: none;
-  flex-direction: column;
-  background-color: darkgrey;
-  border-radius: 5px;
-  position: absolute;
-  top: 2.5rem;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 5rem;
   right: 0;
-  z-index: 99;
-  width: 15rem;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 2rem;
 }
 
 .language-switch .menu.mobile {
@@ -40,19 +41,13 @@
 
 .language-switch .menu .menuItem {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1.5rem;
-  color: white;
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+  color: #5a5a5a;
   text-decoration: none;
   cursor: pointer;
   margin: 0.2rem 2rem;
-  font-size: 1rem;
-  border-bottom: #5a5a5a 3px solid;
-}
-
-.language-switch .menu .menuItem:last-child {
-  border-bottom: none;
+  font-size: 1.5rem;
 }
 
 .language-switch .menu .flag {
@@ -60,7 +55,16 @@
 }
 
 .language-switch .menu .menuItem:hover {
-  background-color: rosybrown;
+  background-color: #7f86a3;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  color: white;
+}
+
+.mobile-nav-wrapper .menu .menuItem.active {
+  background-color: #7f86a3;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
   color: white;
 }
 

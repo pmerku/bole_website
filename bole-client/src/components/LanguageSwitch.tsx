@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './LanguageSwitch.css';
 import { Icon } from './Icon';
 import { useOutsideClick } from '../hooks/useOutsideClick';
+import { NavBarLink } from './NavBarLink';
 
 export function LanguageSwitch(props: { isMobile?: boolean }) {
   const [open, setOpen] = React.useState(false);
@@ -22,33 +23,37 @@ export function LanguageSwitch(props: { isMobile?: boolean }) {
     i18n.changeLanguage(language);
   }
 
+  const languageList = ['en', 'sl', 'it', 'de'];
+
   return (
     <div className="language-switch">
       <div className="cont" ref={wrapperRef} onClick={() => setOpen((p) => !p)}>
-        <Icon type="globe" />
-        <Icon type="triangle" />
+        <NavBarLink isMobile={props.isMobile}>
+          <Icon type="globe" />
+        </NavBarLink>
       </div>
       <div
         className={
           'menu ' + (open ? 'open ' : '') + (props.isMobile ? 'mobile' : '')
         }
       >
-        <div className="menuItem" onClick={() => changeLanguage('en')}>
-          <Icon type="flag_en" className="flag" />
-          EN
-        </div>
-        <div className="menuItem" onClick={() => changeLanguage('sl')}>
-          <Icon type="flag_sl" className="flag" />
-          SL
-        </div>
-        <div className="menuItem" onClick={() => changeLanguage('it')}>
-          <Icon type="flag_it" className="flag" />
-          IT
-        </div>
-        <div className="menuItem" onClick={() => changeLanguage('de')}>
-          <Icon type="flag_de" className="flag" />
-          DE
-        </div>
+        <ul style={{ listStyle: 'none', margin: '0', padding: '0' }}>
+          {languageList.map((v: any) => (
+            <li key={v}>
+              <div
+                className={'menuItem ' + (v === i18n.language ? 'active' : '')}
+                onClick={() => changeLanguage(v)}
+              >
+                <Icon
+                  type={String('flag_').concat(v)}
+                  className="flag"
+                  spacingRight
+                />
+                {v.toUpperCase()}
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
