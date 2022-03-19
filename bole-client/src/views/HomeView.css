@@ -30,6 +30,11 @@
   transform: translateX(50%);
   font: normal 20rem "Segoe UI";
   color: #e3dcdc;
+  text-shadow: -12px 12px rgba(37, 42, 64, 1), 12px 12px rgba(37, 42, 64, 0.2), 12px 12px rgba(37, 42, 64, 0.2), 12px -12px rgba(37, 42, 64, 1);
+}
+
+.home-wrapper .banner-text.mobile {
+  font: normal 10rem "Segoe UI";
   text-shadow: -10px 10px rgba(37, 42, 64, 1), 10px 10px rgba(37, 42, 64, 0.2), 10px 10px rgba(37, 42, 64, 0.2), 10px -10px rgba(37, 42, 64, 1);
 }
 
