@@ -8,8 +8,17 @@ export function LoadingView(props: {
 }) {
   return (
     <div className={`loading-view ${props.fadein ? 'fadein' : ''}`}>
-      {props.icon ? <div className="icon" /> : null}
-      <h1>{props.children}</h1>
+      {props.icon ? (
+        <div className="icon" />
+      ) : (
+        <div className="wrapper">
+          <div className="fof">
+            <div className="box">
+              <h1>{props.children}</h1>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
