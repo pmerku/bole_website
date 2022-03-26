@@ -34,5 +34,6 @@
     "info": "vitovska info",
     "description": "vitovska description",
     "price": "vitovska price"
-  }
+  },
+  "order": "Order"
 }

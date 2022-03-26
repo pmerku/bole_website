@@ -1,1 +1,8 @@
-{}
+{
+  "home": "Home",
+  "wines": "Wines",
+  "about": "About Us",
+  "contacts": "Contacts",
+  "not-found": "404 Not Found",
+  "footer": "This is a footer"
+}

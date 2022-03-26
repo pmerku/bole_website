@@ -6,18 +6,21 @@ import { TextArea } from '../components/TextArea';
 import { Button } from '../components/Button';
 import { useFetch } from '../hooks/useFetch';
 import { Icon } from '../components/Icon';
-
-const location = {
-  address: ' Via Sottomonte, 25, 34135 Trieste TS',
-  lat: 45.67296,
-  lng: 13.77905,
-};
+import { useTranslation } from 'react-i18next';
 
 export function ContactsView(props: { isMobile: boolean }) {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [subject, setSubject] = React.useState('');
   const [message, setMessage] = React.useState('');
+
+  const { t } = useTranslation('contacts');
+
+  const location = {
+    address: t('map.address'),
+    lat: 45.67296,
+    lng: 13.77905,
+  };
 
   const sendMailFetch = useFetch({
     url: '/api/v1/mail/',
@@ -42,7 +45,7 @@ export function ContactsView(props: { isMobile: boolean }) {
         className="title"
         style={{ marginBottom: props.isMobile ? '0' : '3rem' }}
       >
-        Contact us
+        {t('title')}
       </h2>
       <div className={'info-container ' + (props.isMobile ? 'mobile' : '')}>
         <div className={'info-card ' + (props.isMobile ? '' : 'expanded')}>
@@ -52,18 +55,18 @@ export function ContactsView(props: { isMobile: boolean }) {
             }
           >
             <h3 className={infoText} style={{ fontSize: '1.8rem' }}>
-              Contact information
+              {t('form.title')}
             </h3>
             <p className={infoText} style={{ marginBottom: '2rem' }}>
-              Fill up the form and we will get back to you!
+              {t('form.subtitle')}
             </p>
             <p className={infoText}>
               <Icon type="email" spacingRight />
-              example@email.com
+              {t('form.email')}
             </p>
             <p className={infoText}>
               <Icon type="phone" spacingRight />
-              +39 040 000 000
+              {t('form.phone')}
             </p>
             <p className={infoText}>
               <Icon type="location" spacingRight />
@@ -75,25 +78,25 @@ export function ContactsView(props: { isMobile: boolean }) {
           <TextInput
             value={name}
             set={setName}
-            placeholder="John Doe"
+            placeholder={t('form.placeholder.name')}
             label="Name"
           />
           <TextInput
             value={email}
             set={setEmail}
-            placeholder="email@example.com"
+            placeholder={t('form.placeholder.email')}
             label="Email"
           />
           <TextInput
             value={subject}
             set={setSubject}
-            placeholder="Type your subject here"
+            placeholder={t('form.placeholder.subject')}
             label="Subject"
           />
           <TextArea
             value={message}
             set={setMessage}
-            placeholder="Type your message here"
+            placeholder={t('form.placeholder.message')}
             label="Message"
           />
           <div className="button-wrapper">
@@ -110,14 +113,12 @@ export function ContactsView(props: { isMobile: boolean }) {
             >
               Send
             </Button>
-            {sendMailFetch.error ? (
-              <p>Something went wrong, try again later...</p>
-            ) : null}
+            {sendMailFetch.error ? <p>t{'form.error'}</p> : null}
           </div>
         </div>
       </div>
       <div className="map-container">
-        <h2 className="title">Come visit us</h2>
+        <h2 className="title">{t('map.title')}</h2>
         <Map location={location} zoom={15} isMarkerShown />
       </div>
     </div>

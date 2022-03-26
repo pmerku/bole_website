@@ -72,7 +72,7 @@ function SlideShow(props: { slides: any; isMobile: boolean }) {
                     className="bottle-button"
                     onClick={() => (window.location.href = '/contacts')}
                   >
-                    Order
+                    {t('order')}
                   </Button>
                 </div>
               </div>

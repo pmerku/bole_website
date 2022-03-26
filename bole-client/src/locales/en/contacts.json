@@ -1,1 +1,20 @@
-{}
+{
+  "title": "Contact us",
+  "form": {
+    "title": "Contact information",
+    "subtitle": "Fill up the form and we will get back to you!",
+    "email": "example@email.com",
+    "phone": "+39 040 000 000",
+    "placeholder": {
+      "name": "John Doe",
+      "email": "example@email.com",
+      "subject": "Type your subject here",
+      "message": "Type your message here"
+    },
+    "error": "Something went wrong, try again later..."
+  },
+  "map": {
+    "title": "Come visit us",
+    "address": " Via Sottomonte, 25, 34135 Trieste TS"
+  }
+}
