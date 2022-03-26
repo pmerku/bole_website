@@ -4,9 +4,12 @@ import { Icon } from './Icon';
 import { NavBarLink } from './NavBarLink';
 import { LanguageSwitch } from './LanguageSwitch';
 import { useOutsideClick } from '../hooks/useOutsideClick';
+import { useTranslation } from 'react-i18next';
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
+
+  const { t } = useTranslation('common');
 
   const wrapperRef = useRef(null);
   const outsideClick = useOutsideClick(wrapperRef);
@@ -32,19 +35,16 @@ export function MobileNav() {
           <Icon type="bars" />
           <nav className={'mobile-nav ' + (open ? 'open' : '')}>
             <NavBarLink link="/" isMobile>
-              Home
-            </NavBarLink>
-            <NavBarLink link="/about" isMobile>
-              About Us
+              {t('home')}
             </NavBarLink>
             <NavBarLink link="/wines" isMobile>
-              Wines
+              {t('wines')}
             </NavBarLink>
-            <NavBarLink link="/story" isMobile>
-              Our Story
+            <NavBarLink link="/about" isMobile>
+              {t('about')}
             </NavBarLink>
             <NavBarLink link="/contacts" isMobile>
-              Contacts
+              {t('contacts')}
             </NavBarLink>
           </nav>
         </div>
@@ -54,17 +54,18 @@ export function MobileNav() {
 }
 
 export function Nav() {
+  const { t } = useTranslation('common');
+
   return (
     <div className="nav-wrapper">
       <div className="logo">
         <Icon type="logo" />
       </div>
       <nav className="nav">
-        <NavBarLink link="/">Home</NavBarLink>
-        <NavBarLink link="/about">About Us</NavBarLink>
-        <NavBarLink link="/wines">Wines</NavBarLink>
-        <NavBarLink link="/story">Our Story</NavBarLink>
-        <NavBarLink link="/contacts">Contacts</NavBarLink>
+        <NavBarLink link="/">{t('home')}</NavBarLink>
+        <NavBarLink link="/wines">{t('wines')}</NavBarLink>
+        <NavBarLink link="/about">{t('about')}</NavBarLink>
+        <NavBarLink link="/contacts">{t('contacts')}</NavBarLink>
         <LanguageSwitch />
       </nav>
     </div>
