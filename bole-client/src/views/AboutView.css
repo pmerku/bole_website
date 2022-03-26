@@ -1,0 +1,41 @@
+.about-wrapper .text-block-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-wrapper .text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  color: #252a40;
+  width: 50rem;
+}
+
+.about-wrapper .text-block h2 {
+  font: italic 3rem "Segoe UI";
+}
+
+.about-wrapper .text-block p {
+  font: normal 1.5rem "Segoe UI";
+}
+
+.mobile-about-wrapper .text-block-wrapper {
+  padding: 2rem;
+  background: #cccfe0;
+  color: #252a40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-about-wrapper .text-block {
+  width: 35rem;
+  font-size: 1.2rem;
+}
+
+.mobile-about-wrapper .text-block h2 {
+  font: italic 2.8rem "Segoe UI";
+  text-align: center;
+}

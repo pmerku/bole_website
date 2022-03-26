@@ -1,0 +1,137 @@
+.hero-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.hero-wrapper .image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-wrapper .image-wrapper img {
+  max-height: 90vh;
+  width: 100%;
+}
+
+.hero-wrapper .inner-card {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translateX(50%) translateY(50%);
+  font-size: 1.5rem;
+  color: #252a40;
+  background: white;
+  box-shadow: 0 0 20px -10px #252a40;
+  width: 40rem;
+  padding: 6rem;
+}
+
+.hero-wrapper .inner-card .title {
+  padding: 1rem;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-wrapper .inner-card .text {
+  padding: 1rem;
+  margin: 0;
+}
+
+.side-hero-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem 2rem;
+  position: relative;
+}
+
+.side-hero-wrapper.left {
+  justify-content: left;
+}
+
+.side-hero-wrapper.right {
+  justify-content: right;
+}
+
+.side-hero-wrapper .image-wrapper {
+  overflow: hidden;
+  width: 55%;
+}
+
+.side-hero-wrapper .image-wrapper img {
+  height: 60vh;
+  width: 100%;
+}
+
+.side-hero-wrapper .inner-card {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #252a40;
+  background: white;
+  width: 40rem;
+  padding: 5rem;
+}
+
+.side-hero-wrapper .inner-card.left {
+  right: 10%;
+  box-shadow: -15px 0 20px -22px #252a40;
+}
+
+.side-hero-wrapper .inner-card.right {
+  left: 10%;
+  box-shadow: 15px 0 20px -22px #252a40;
+}
+
+.side-hero-wrapper .inner-card .title {
+  font-size: 3rem;
+}
+
+.side-hero-wrapper .inner-card .text {
+  font-size: 1.5rem;
+  color: #252a40;
+}
+
+.mobile-hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-hero-wrapper .image-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.mobile-hero-wrapper .image-wrapper img {
+  max-height: 60vh;
+  width: 100%;
+}
+
+.mobile-hero-wrapper .inner-card-wrapper {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-hero-wrapper .inner-card {
+  font-size: 1.2rem;
+}
+
+.mobile-hero-wrapper .inner-card p {
+  color: #252a40;
+  font-size: 1.2rem;
+}
+
+.mobile-hero-wrapper .inner-card h2 {
+  font-size: 2.8rem;
+  text-align: center;
+}
