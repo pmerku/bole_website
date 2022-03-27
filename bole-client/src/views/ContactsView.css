@@ -21,6 +21,8 @@
   flex-direction: column;
   padding: 2rem;
   align-items: center;
+  color: #252a40;
+  fill: #252a40;
 }
 
 .contacts-wrapper .info-card.expanded {
@@ -51,6 +53,7 @@
 .contacts-wrapper .form-container {
   flex: 1;
   padding: 0 2rem;
+  font-size: 1.2rem;
 }
 
 .contacts-wrapper .styled-input {
@@ -67,6 +70,7 @@
   margin: 2rem;
   width: 10rem;
   background-color: #7f86a3;
+  font: normal 1.5rem "Segoe UI";
 }
 
 .contacts-wrapper .form-button:hover {

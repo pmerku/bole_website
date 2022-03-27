@@ -117,9 +117,9 @@ export function ContactsView(props: { isMobile: boolean }) {
           />
           <div className="button-wrapper">
             <Button className="form-button" onClick={handleClick}>
-              Send
+              {t('form.button')}
             </Button>
-            {sendMailFetch.error ? <p>t{'form.error'}</p> : null}
+            {sendMailFetch.error ? <p>{t('form.error')}</p> : null}
           </div>
         </div>
       </div>
