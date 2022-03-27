@@ -1,38 +1,38 @@
 {
   "prosekar": {
     "title": "Prosekar",
-    "info": "prosekar info",
-    "description": "prosekar description",
+    "info": "prosekar info lorem ipsum dolor",
+    "description": "prosekar description lorem ipsum dolor sit amet",
     "price": "prosekar price"
   },
   "brut": {
     "title": "Brut Pro",
-    "info": "brut info",
-    "description": "brut description",
+    "info": "brut info lorem ipsum dolor",
+    "description": "brut description lorem ipsum dolor sit amet",
     "price": "brut price"
   },
   "crnina": {
     "title": "Črnina",
-    "info": "črnina info",
-    "description": "črnina description",
+    "info": "črnina info lorem ipsum dolor",
+    "description": "črnina description lorem ipsum dolor sit amet",
     "price": "črnina price"
   },
   "glera": {
     "title": "Glera",
-    "info": "glera info",
-    "description": "glera description",
+    "info": "glera info lorem ipsum dolor",
+    "description": "glera description lorem ipsum dolor sit amet",
     "price": "glera price"
   },
   "malvazija": {
     "title": "Malvazija",
-    "info": "malvazija info",
-    "description": "malvazija description",
+    "info": "malvazija info lorem ipsum dolor",
+    "description": "malvazija description lorem ipsum dolor sit amet",
     "price": "malvazija price"
   },
   "vitovska": {
     "title": "Vitovska",
-    "info": "vitovska info",
-    "description": "vitovska description",
+    "info": "vitovska info lorem ipsum dolor",
+    "description": "vitovska description lorem ipsum dolor sit amet",
     "price": "vitovska price"
   },
   "order": "Order"

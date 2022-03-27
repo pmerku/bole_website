@@ -1,79 +1,174 @@
-.page-content-wrapper {
+.wines-wrapper {
   height: 90vh;
 }
 
-.slide {
-  opacity: 0;
-  transition: 1s ease;
+.wines-wrapper.mobile {
+  height: auto;
 }
 
-.slide.active {
+.wines-wrapper .slideshow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wines-wrapper .slideshow-wrapper.mobile {
+  flex-direction: column;
+}
+
+.wines-wrapper .slideshow-wrapper .slide {
+  opacity: 0;
+  transition: 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wines-wrapper .slideshow-wrapper .slide.mobile {
+  flex-direction: column;
+}
+
+.slideshow-wrapper .slide.active {
   opacity: 1;
   transition-duration: 1s;
 }
 
-.wines-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.slideshow-wrapper .slide.mobile.active {
+  width: 100%;
 }
 
-.wines-wrapper.mobile {
-  flex-direction: column;
-  padding-bottom: 8rem;
-}
-
-.wines-wrapper .bottle-card {
-  position: relative;
+.slideshow-wrapper .bottle-card {
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem 5rem 2rem 2rem;
 }
 
-.wines-wrapper .bottle-card.mobile {
-  padding: 1rem 2rem;
+.slideshow-wrapper .bottle-card.mobile {
+  padding: 1rem 0;
 }
 
-.wines-wrapper .bottle-card .bottle-arrow {
-  font-size: 1.5rem;
+.slideshow-wrapper .bottle-card .arrow {
+  font-size: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  fill: #252a40;
   cursor: pointer;
 }
 
-.wines-wrapper .container {
-  height: 60vh;
-  width: 15rem;
-  overflow: hidden;
+.slideshow-wrapper .bottle-card .arrow:hover {
+  fill: #8f9cc7;
+}
+
+.slideshow-wrapper .bottle-card .arrow.left {
+  font-size: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  fill: #252a40;
+  z-index: 0;
+}
+
+.slideshow-wrapper .bottle-card .arrow.left:hover {
+  fill: #8f9cc7;
+}
+
+.slideshow-wrapper .bottle-card .arrow.mobile {
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.slideshow-wrapper .bottle-card .image-container {
+  height: 70vh;
+  width: 30rem;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.wines-wrapper .bottle-img {
+.slideshow-wrapper .bottle-card .image-container.mobile {
+  height: 65vh;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow-wrapper .bottle-card .image-container img {
+  max-height: 70vh;
   width: auto;
 }
 
-.wines-wrapper .bottle-info {
+.info-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  background: #cccfe0;
+  color: #252a40;
+  height: 50vh;
+  width: 25rem;
+  margin-left: 5rem;
+  border-radius: 10px;
   position: relative;
-  padding: 5rem 2rem;
-  width: 20rem;
-  background-color: #707070;
-  border-radius: 5px;
 }
 
-.wines-wrapper .bottle-info.mobile {
-  padding: 2rem;
-  width: 15rem;
+.info-card-wrapper.mobile {
+  padding: 1rem 0 5rem;
+  height: auto;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
-.wines-wrapper .bottle-button {
+.info-card-wrapper h1 {
+  font: normal 3rem "Segoe UI";
+  padding: 1rem;
+}
+
+.info-card-wrapper.mobile h1 {
+  margin-top: 0;
+}
+
+.info-card-wrapper p {
+  font-size: 1.2rem;
+  padding-left: 1rem;
+}
+
+.info-card-wrapper.mobile p {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+}
+
+.info-card-wrapper h3 {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.info-card-wrapper .bottle-button {
   position: absolute;
-  padding: 1rem 5rem;
-  bottom: -5rem;
+  width: 15rem;
+  padding: 1rem;
+  font: normal 1.5rem "Segoe UI";
+  bottom: 5rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #7f86a3;
+  background-color: white;
+  border-radius: 20px;
 }
 
-.wines-wrapper .bottle-button:hover {
-  background-color: #3498db;
+.info-card-wrapper .bottle-button:hover {
+  background-color: #8f9cc7;
+}
+
+.info-card-wrapper .mobile-button {
+  width: 15rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  font: normal 1.5rem "Segoe UI";
+  background-color: white;
+  border-radius: 20px;
 }

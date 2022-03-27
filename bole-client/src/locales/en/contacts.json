@@ -11,7 +11,8 @@
       "subject": "Type your subject here",
       "message": "Type your message here"
     },
-    "error": "Something went wrong, try again later..."
+    "error": "Something went wrong, try again later...",
+    "button": "Send"
   },
   "map": {
     "title": "Come visit us",

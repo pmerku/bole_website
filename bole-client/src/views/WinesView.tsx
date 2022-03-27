@@ -6,12 +6,35 @@ import './WinesView.css';
 import { WinesData } from './WinesData';
 import ReactGa from 'react-ga';
 
-export function WinesView(props: { isMobile: boolean }) {
-  return <SlideShow slides={WinesData} isMobile={props.isMobile} />;
+function InfoCard(props: { name: string; isMobile: boolean }) {
+  const { t } = useTranslation('wines');
+
+  function handleClick() {
+    ReactGa.event({
+      category: 'wines',
+      action: 'Button click on bottle',
+      label: 'Label for wines',
+    });
+    window.location.href = '/contacts';
+  }
+
+  return (
+    <div className={'info-card-wrapper ' + (props.isMobile ? 'mobile' : '')}>
+      <h1>{t(props.name + '.title')}</h1>
+      <p>{t(props.name + '.info')}</p>
+      <p>{t(props.name + '.description')}</p>
+      <h3>{t(props.name + '.price')}</h3>
+      <Button
+        className={props.isMobile ? 'mobile-button' : 'bottle-button'}
+        onClick={handleClick}
+      >
+        {t('order')}
+      </Button>
+    </div>
+  );
 }
 
 function SlideShow(props: { slides: any; isMobile: boolean }) {
-  const { t } = useTranslation('wines');
   const [current, setCurrent] = React.useState(0);
   const length = props.slides.length;
 
@@ -25,68 +48,60 @@ function SlideShow(props: { slides: any; isMobile: boolean }) {
     setCurrent(current === length - 1 ? 0 : current + 1);
   }
 
-  function handleClick() {
-    ReactGa.event({
-      category: 'wines',
-      action: 'Button click on bottle',
-      label: 'Label for wines',
-    });
-    window.location.href = '/contacts';
-  }
+  const classNameSlide = 'slide ' + (props.isMobile ? 'mobile ' : ' ');
+  const classNameActiveSlide = classNameSlide + 'active';
 
   return (
-    <div className="page-content-wrapper">
+    <div className="slideshow-wrapper">
       {WinesData.map((slide, index) => {
         return (
           <div
             key={index}
-            className={index === current ? 'slide active' : 'slide'}
+            className={
+              index === current ? classNameActiveSlide : classNameSlide
+            }
           >
             {index === current && (
-              <div
-                className={'wines-wrapper ' + (props.isMobile ? 'mobile' : '')}
-              >
-                <div className="bottles-wrapper">
+              <>
+                <div
+                  className={
+                    'bottle-card ' + (props.isMobile ? 'mobile ' : ' ')
+                  }
+                >
+                  <Icon
+                    className={
+                      'arrow left ' + (props.isMobile ? 'mobile ' : ' ')
+                    }
+                    type="left_arrow"
+                    onClick={() => prevSlide()}
+                  />
                   <div
                     className={
-                      'bottle-card ' + (props.isMobile ? 'mobile' : '')
+                      'image-container ' + (props.isMobile ? 'mobile' : '')
                     }
                   >
-                    <Icon
-                      type="left_arrow"
-                      className="bottle-arrow"
-                      onClick={() => prevSlide()}
-                    />
-                    <div className="container">
-                      <img
-                        className="bottle-img"
-                        src={slide.image}
-                        alt="bottle-img"
-                      />
-                    </div>
-                    <Icon
-                      type="right_arrow"
-                      className="bottle-arrow"
-                      onClick={() => nextSlide()}
-                    />
+                    <img src={slide.image} alt="bottle-img" />
                   </div>
+                  <Icon
+                    className={'arrow ' + (props.isMobile ? 'mobile ' : ' ')}
+                    type="right_arrow"
+                    onClick={() => nextSlide()}
+                  />
                 </div>
-                <div
-                  className={'bottle-info ' + (props.isMobile ? 'mobile' : '')}
-                >
-                  <h1>{t(slide.name + '.title')}</h1>
-                  <p>{t(slide.name + '.info')}</p>
-                  <p>{t(slide.name + '.description')}</p>
-                  <h3>{t(slide.name + '.price')}</h3>
-                  <Button className="bottle-button" onClick={handleClick}>
-                    {t('order')}
-                  </Button>
-                </div>
-              </div>
+                <InfoCard name={slide.name} isMobile={props.isMobile} />
+              </>
             )}
           </div>
         );
       })}
+    </div>
+  );
+}
+
+export function WinesView(props: { isMobile: boolean }) {
+  return (
+    <div className={'wines-wrapper ' + (props.isMobile ? 'mobile' : '')}>
+      <SlideShow slides={WinesData} isMobile={props.isMobile} />
     </div>
   );
 }
