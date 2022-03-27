@@ -25,7 +25,7 @@ export function Footer(props: { isMobile: boolean }) {
         <div className={'middle ' + (props.isMobile ? 'mobile' : '')}>
           2021 Primož Merkù
         </div>
-        <div>pmerku@gmail.com</div>
+        <a href="mailto:pmerku@gmail.com">pmerku@gmail.com</a>
       </div>
     </footer>
   );

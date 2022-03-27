@@ -34,10 +34,14 @@
 .footer-wrapper .links .nav-bar-link {
   width: 10rem;
   color: #252a40;
-  background: white;
+  background: #e3dcdc;
   border-radius: 5px;
   padding: 1rem;
   margin: 1rem;
+}
+
+.footer-wrapper .links .nav-bar-link:hover {
+  background: #8f9cc7;
 }
 
 .footer-wrapper .copyright {
@@ -60,4 +64,10 @@
 .footer-wrapper .copyright .middle {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.footer-wrapper .copyright a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
