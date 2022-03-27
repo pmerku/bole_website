@@ -3,9 +3,19 @@ import { useTranslation } from 'react-i18next';
 import img from '../assets/home/DJI_0258.jpg';
 import './HomeView.css';
 import { Button } from '../components/Button';
+import ReactGa from 'react-ga';
 
 export function HomeView(props: { isMobile: boolean }) {
   const { t } = useTranslation('home');
+
+  function handleClick() {
+    ReactGa.event({
+      category: 'home',
+      action: 'Button click on home',
+      label: 'Label for home',
+    });
+    window.location.href = '/wines';
+  }
 
   return (
     <div className="home-wrapper">
@@ -18,7 +28,7 @@ export function HomeView(props: { isMobile: boolean }) {
         </text>
       </div>
       <Button
-        onClick={() => (window.location.href = '/wines')}
+        onClick={handleClick}
         className={'home-button ' + (props.isMobile ? 'mobile' : '')}
       >
         {t('button')}

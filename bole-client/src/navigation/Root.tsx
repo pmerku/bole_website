@@ -7,7 +7,11 @@ import { WinesView } from '../views/WinesView';
 import { ContactsView } from '../views/ContactsView';
 import { HomeView } from '../views/HomeView';
 import { LoadingView } from '../views/LoadingView';
-import { useTranslation } from 'react-i18next';
+import { Footer } from '../components/Footer';
+import { Wrapper } from '../components/Wrapper';
+import { useAnalytics } from '../hooks/useAnalytics';
+import { TOSView } from '../views/TOSView';
+import { Privacy } from '../views/PrivacyView';
 
 function NavBarRouter(props: { isMobile: boolean }) {
   return props.isMobile ? <MobileNav /> : <Nav />;
@@ -16,7 +20,7 @@ function NavBarRouter(props: { isMobile: boolean }) {
 export function RootNavigation() {
   const [windowDimension, setWindowDimension] = React.useState<any>(null);
 
-  const { t } = useTranslation('common');
+  const { initialized } = useAnalytics();
 
   React.useEffect(() => {
     setWindowDimension(window.innerWidth);
@@ -37,25 +41,33 @@ export function RootNavigation() {
     <div className="wrapper">
       <NavBarRouter isMobile={isMobile} />
       <div className="page-content">
-        <Switch>
-          <Route exact path="/">
-            <HomeView isMobile={isMobile} />
-          </Route>
-          <Route exact path="/wines">
-            <WinesView isMobile={isMobile} />
-          </Route>
-          <Route exact path="/about">
-            <AboutView isMobile={isMobile} />
-          </Route>
-          <Route exact path="/contacts">
-            <ContactsView isMobile={isMobile} />
-          </Route>
-          <Route path="*">
-            <LoadingView>{t('not-found')}</LoadingView>
-          </Route>
-        </Switch>
+        <Wrapper initialized={initialized}>
+          <Switch>
+            <Route exact path="/">
+              <HomeView isMobile={isMobile} />
+            </Route>
+            <Route exact path="/wines">
+              <WinesView isMobile={isMobile} />
+            </Route>
+            <Route exact path="/about">
+              <AboutView isMobile={isMobile} />
+            </Route>
+            <Route exact path="/contacts">
+              <ContactsView isMobile={isMobile} />
+            </Route>
+            <Route exact path="/tos">
+              <TOSView />
+            </Route>
+            <Route exact path="/privacy">
+              <Privacy />
+            </Route>
+            <Route path="*">
+              <LoadingView>404 Not Found</LoadingView>
+            </Route>
+          </Switch>
+        </Wrapper>
       </div>
-      <div className="footer">{t('footer')}</div>
+      <Footer isMobile={isMobile} />
     </div>
   );
 }

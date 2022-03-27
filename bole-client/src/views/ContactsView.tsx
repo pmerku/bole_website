@@ -7,6 +7,7 @@ import { Button } from '../components/Button';
 import { useFetch } from '../hooks/useFetch';
 import { Icon } from '../components/Icon';
 import { useTranslation } from 'react-i18next';
+import ReactGa from 'react-ga';
 
 export function ContactsView(props: { isMobile: boolean }) {
   const [name, setName] = React.useState('');
@@ -26,6 +27,21 @@ export function ContactsView(props: { isMobile: boolean }) {
     url: '/api/v1/mail/',
     method: 'POST',
   });
+
+  function handleClick() {
+    ReactGa.event({
+      category: 'contacts',
+      action: 'Form submit on contacts',
+      label: 'Label for contacts',
+    });
+
+    sendMailFetch.run({
+      name,
+      email,
+      subject,
+      message,
+    });
+  }
 
   React.useEffect(() => {
     if (sendMailFetch.done) {
@@ -100,17 +116,7 @@ export function ContactsView(props: { isMobile: boolean }) {
             label="Message"
           />
           <div className="button-wrapper">
-            <Button
-              className="form-button"
-              onClick={() =>
-                sendMailFetch.run({
-                  name,
-                  email,
-                  subject,
-                  message,
-                })
-              }
-            >
+            <Button className="form-button" onClick={handleClick}>
               Send
             </Button>
             {sendMailFetch.error ? <p>t{'form.error'}</p> : null}

@@ -4,6 +4,7 @@ import { Icon } from '../components/Icon';
 import { Button } from '../components/Button';
 import './WinesView.css';
 import { WinesData } from './WinesData';
+import ReactGa from 'react-ga';
 
 export function WinesView(props: { isMobile: boolean }) {
   return <SlideShow slides={WinesData} isMobile={props.isMobile} />;
@@ -24,8 +25,17 @@ function SlideShow(props: { slides: any; isMobile: boolean }) {
     setCurrent(current === length - 1 ? 0 : current + 1);
   }
 
+  function handleClick() {
+    ReactGa.event({
+      category: 'wines',
+      action: 'Button click on bottle',
+      label: 'Label for wines',
+    });
+    window.location.href = '/contacts';
+  }
+
   return (
-    <div>
+    <div className="page-content-wrapper">
       {WinesData.map((slide, index) => {
         return (
           <div
@@ -68,10 +78,7 @@ function SlideShow(props: { slides: any; isMobile: boolean }) {
                   <p>{t(slide.name + '.info')}</p>
                   <p>{t(slide.name + '.description')}</p>
                   <h3>{t(slide.name + '.price')}</h3>
-                  <Button
-                    className="bottle-button"
-                    onClick={() => (window.location.href = '/contacts')}
-                  >
+                  <Button className="bottle-button" onClick={handleClick}>
                     {t('order')}
                   </Button>
                 </div>
