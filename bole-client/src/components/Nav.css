@@ -6,6 +6,10 @@
   height: 10vh;
 }
 
+.nav-wrapper .logo-icon {
+  font-size: 5rem;
+}
+
 .nav-wrapper .logo {
   font-size: 3rem;
   fill: #252a40;
@@ -30,10 +34,14 @@
   align-items: center;
 }
 
+.mobile-nav-wrapper .logo-icon {
+  font-size: 3rem;
+}
+
 .mobile-nav-wrapper .logo {
   position: relative;
   font-size: 2rem;
-  color: #252a40;
+  fill: #252a40;
   padding-left: 0.3rem;
 }
 
@@ -51,12 +59,16 @@
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 5rem;
+  top: 4rem;
   right: 0;
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 2rem;
+}
+
+.mobile-nav-wrapper .mobile-nav.tablet {
+  top: 5rem;
 }
 
 .mobile-nav-wrapper .mobile-nav .nav-bar-link {

@@ -6,7 +6,7 @@ import { LanguageSwitch } from './LanguageSwitch';
 import { useOutsideClick } from '../hooks/useOutsideClick';
 import { useTranslation } from 'react-i18next';
 
-export function MobileNav() {
+export function MobileNav(props: { isTablet: boolean }) {
   const [open, setOpen] = React.useState(false);
 
   const { t } = useTranslation('common');
@@ -22,18 +22,24 @@ export function MobileNav() {
 
   return (
     <div className="mobile-nav-wrapper">
-      <div className="logo">
+      <div className="logo-icon">
         <Icon type="logo" />
       </div>
       <div className="mobile-nav-menu">
-        <LanguageSwitch isMobile />
+        <LanguageSwitch isMobile isTablet={props.isTablet} />
         <div
           className="logo"
           ref={wrapperRef}
           onClick={() => setOpen((p) => !p)}
         >
           <Icon type="bars" />
-          <nav className={'mobile-nav ' + (open ? 'open' : '')}>
+          <nav
+            className={
+              'mobile-nav ' +
+              (open ? 'open ' : ' ') +
+              (props.isTablet ? 'tablet' : '')
+            }
+          >
             <NavBarLink link="/" isMobile>
               {t('home')}
             </NavBarLink>
@@ -58,7 +64,7 @@ export function Nav() {
 
   return (
     <div className="nav-wrapper">
-      <div className="logo">
+      <div className="logo-icon">
         <Icon type="logo" />
       </div>
       <nav className="nav">

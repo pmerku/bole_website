@@ -37,6 +37,11 @@
 
 .language-switch .menu.mobile {
   right: -2rem;
+  top: 4rem;
+}
+
+.language-switch .menu.tablet {
+  top: 5rem;
 }
 
 .language-switch .menu .menuItem {

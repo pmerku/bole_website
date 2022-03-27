@@ -13,8 +13,8 @@ import { useAnalytics } from '../hooks/useAnalytics';
 import { TOSView } from '../views/TOSView';
 import { Privacy } from '../views/PrivacyView';
 
-function NavBarRouter(props: { isMobile: boolean }) {
-  return props.isMobile ? <MobileNav /> : <Nav />;
+function NavBarRouter(props: { isMobile: boolean; isTablet: boolean }) {
+  return props.isMobile ? <MobileNav isTablet={props.isTablet} /> : <Nav />;
 }
 
 export function RootNavigation() {
@@ -36,10 +36,11 @@ export function RootNavigation() {
   }, []);
 
   const isMobile = windowDimension <= 1200;
+  const isTablet = windowDimension >= 600;
 
   return (
     <div className="wrapper">
-      <NavBarRouter isMobile={isMobile} />
+      <NavBarRouter isMobile={isMobile} isTablet={isTablet} />
       <div className="page-content">
         <Wrapper initialized={initialized}>
           <Switch>

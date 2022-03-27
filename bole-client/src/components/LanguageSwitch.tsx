@@ -5,7 +5,10 @@ import { Icon } from './Icon';
 import { useOutsideClick } from '../hooks/useOutsideClick';
 import { NavBarLink } from './NavBarLink';
 
-export function LanguageSwitch(props: { isMobile?: boolean }) {
+export function LanguageSwitch(props: {
+  isMobile?: boolean;
+  isTablet?: boolean;
+}) {
   const [open, setOpen] = React.useState(false);
   const { i18n } = useTranslation();
 
@@ -34,7 +37,10 @@ export function LanguageSwitch(props: { isMobile?: boolean }) {
       </div>
       <div
         className={
-          'menu ' + (open ? 'open ' : '') + (props.isMobile ? 'mobile' : '')
+          'menu ' +
+          (open ? 'open ' : '') +
+          (props.isMobile ? 'mobile ' : ' ') +
+          (props.isTablet ? 'tablet' : '')
         }
       >
         <ul style={{ listStyle: 'none', margin: '0', padding: '0' }}>
