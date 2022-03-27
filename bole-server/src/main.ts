@@ -25,21 +25,21 @@ async function bootstrap() {
   );
   const configService = app.get(ConfigService);
 
-  app.use(
-    session({
-      cookie: {
-        maxAge: 24 * 7 * 60 * 60 * 1000, // 1 week
-        httpOnly: false,
-        secure: configService.get('useHttps'),
-      },
-      secret: configService.get('secrets.session'),
-      name: configService.get('cookie.name'),
-      resave: false,
-      rolling: true,
-      saveUninitialized: false,
-      store: getSessionStore(),
-    }),
-  );
+  // app.use(
+  //   session({
+  //     cookie: {
+  //       maxAge: 60 * 60 * 1000, // 1 hour
+  //       httpOnly: false,
+  //       secure: configService.get('useHttps'),
+  //     },
+  //     secret: configService.get('secrets.session'),
+  //     name: configService.get('cookie.name'),
+  //     resave: false,
+  //     rolling: true,
+  //     saveUninitialized: false,
+  //     store: getSessionStore(),
+  //   }),
+  // );
 
   await app.listen(configService.get('port'));
 }

@@ -17,21 +17,21 @@ const config = ConfigModule.forRoot({
   imports: [
     // config & database
     config,
-    TypeOrmModule.forRootAsync({
-      imports: [config, ScheduleModule.forRoot()],
-      useFactory: async (configService: ConfigService) => ({
-        type: 'postgres',
-        host: configService.get('db.host'),
-        port: configService.get('db.port'),
-        username: configService.get('db.user'),
-        password: configService.get('db.password'),
-        database: configService.get('db.database'),
-        autoLoadEntities: true,
-        entities: [TypeORMSession],
-        synchronize: true,
-      }),
-      inject: [ConfigService],
-    }),
+    // TypeOrmModule.forRootAsync({
+    //   imports: [config, ScheduleModule.forRoot()],
+    //   useFactory: async (configService: ConfigService) => ({
+    //     type: 'postgres',
+    //     host: configService.get('db.host'),
+    //     port: configService.get('db.port'),
+    //     username: configService.get('db.user'),
+    //     password: configService.get('db.password'),
+    //     database: configService.get('db.database'),
+    //     autoLoadEntities: true,
+    //     entities: [TypeORMSession],
+    //     synchronize: true,
+    //   }),
+    //   inject: [ConfigService],
+    // }),
 
     // mail
     MailerModule.forRootAsync({

@@ -16,22 +16,22 @@ services:
       - TZ=Europe/Amsterdam
     env_file:
       - ./config/bole-server.env
-    links:
-      - database
-    depends_on:
-      - database
+#    links:
+#      - database
+#    depends_on:
+#      - database
     restart: unless-stopped
 
   # database
-  database:
-    image: postgres:13.3
-    environment:
-      - TZ=Europe/Amsterdam
-    volumes:
-      - "postgres-data:/var/lib/postgresql/data"
-    env_file:
-      - ./config/postgres.env
-    restart: unless-stopped
+#  database:
+#    image: postgres:13.3
+#    environment:
+#      - TZ=Europe/Amsterdam
+#    volumes:
+#      - "postgres-data:/var/lib/postgresql/data"
+#    env_file:
+#      - ./config/postgres.env
+#    restart: unless-stopped
 
   # nginx reverse proxy
   proxy:
@@ -49,5 +49,5 @@ services:
     restart: unless-stopped
 
 # persistent data
-volumes:
-  postgres-data:
+#volumes:
+#  postgres-data:
