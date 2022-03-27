@@ -1,0 +1,63 @@
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background: #252a40;
+  color: white;
+}
+
+.footer-wrapper.mobile {
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.footer-wrapper .about {
+  font-size: 1.2rem;
+}
+
+.footer-wrapper .about h3 {
+  font-size: 2.5rem;
+}
+
+.footer-wrapper .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-wrapper .links.mobile {
+  flex-direction: column;
+}
+
+.footer-wrapper .links .nav-bar-link {
+  width: 10rem;
+  color: #252a40;
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.footer-wrapper .copyright {
+  font: normal 1.2rem "Segoe UI";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-wrapper .copyright.mobile {
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.footer-wrapper .copyright .middle {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.footer-wrapper .copyright .middle {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
